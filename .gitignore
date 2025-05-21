@@ -7,7 +7,7 @@
 .pnp.js
 
 .DS_Store
-**/node_modules
+/node_modules
 !**/test/fixtures/**/node_modules
 /packages/*/LICENSE
 !/packages/babel-helpers/LICENSE
