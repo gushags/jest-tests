@@ -1,5 +1,6 @@
 // capitalize.js
-export { capitalize, reverseString, calculator, caesarCipher };
+export { capitalize, reverseString, calculator, caesarCipher, analyzeArray };
+import { mergeSort } from "./merge-sort.js";
 
 function capitalize(str) {
   return str[0].toUpperCase() + str.slice(1).toLowerCase();
@@ -117,4 +118,22 @@ function checkLowerCase(char) {
   return /[a-z]/.test(char) ? true : false;
 }
 
-caesarCipher("aBc, yut", 3);
+function analyzeArray(arr) {
+  const sortedArr = mergeSort(arr);
+  const object = {
+    average: arrAverage(arr),
+    min: sortedArr[0],
+    max: sortedArr[arr.length - 1],
+    length: arr.length,
+  };
+  object;
+  return object;
+}
+
+function arrAverage(arr) {
+  let total = 0;
+  for (const item of arr) {
+    total = total + item;
+  }
+  return total / arr.length;
+}
